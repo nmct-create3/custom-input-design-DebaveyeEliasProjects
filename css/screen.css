@@ -646,13 +646,33 @@ input::placeholder {
 }   
 
 .c-option--hidden:checked + .c-custom-option {
-    background-color: red   ;
+    /* background-color: red   ; */
   }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     opacity: 1;
     transition: 0.1s ease;
+
 }
+
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input{
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border-color: var(--global-color-alpha);
+  }
+  .c-option--hidden:focus:checked + .c-custom-option .c-custom-option__fake-input{
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border-color: var(--global-color-alpha);
+  }
+
+  .c-option--hidden:active + .c-custom-option .c-custom-option__fake-input{
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border-color: var(--global-color-alpha);
+  }
+
+  .c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input{
+    box-shadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+    border-color: var(--global-color-alpha);
+  }
 
 .c-custom-option{
 
@@ -672,6 +692,7 @@ input::placeholder {
 }
 
 
+
 .c-custom-option__fake-input--checkbox {
     border-radius: 3px;
     display: flex;
@@ -685,6 +706,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 }
+
 
 .c-custom-option__symbol {
     transition: 0.1s ease;  
