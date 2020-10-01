@@ -63,6 +63,9 @@
     --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
     --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
     --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+    --global-page-color: var(--color-neutral-xxxx-dark);
+    --global-page-backgroundColor: var(--color-neutral-xxxx-light);
 }
 
 /*------------------------------------*\
@@ -811,8 +814,24 @@ input::placeholder {
         justify-content: space-between;
     }
 
+
+
     .c-toggle-list__item .c-toggle__label--inverted{
         flex-direction: row;
+    }
+
+
+.c-custom-select{
+    display: flex;
+    align-items: center;
+}
+
+    .c-custom-select__symbol{
+        height: 24px;
+        position: absolute;
+        right:  0;
+        pointer-events: none;
+        fill: var(--global-color-neutral-x-dark);
     }
 /*
     Component: Label
@@ -865,6 +884,52 @@ input::placeholder {
     box-shadow: none;
 }
 
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--global-color-neutral-xxxx-dark);
+        color: var(--global-color-neutral-xxxx-light);
+    }
+    .c-card{
+        background-color: var(--global-color-neutral-xxx-dark);
+    }
+    .c-input{
+        background-color: var(--global-color-neutral-xxxx-dark);
+        border:none;
+        color: var(--global-color-neutral-xxxx-light);
+    }
+    .c-input:hover{
+        background-color: var(--global-color-neutral-xxxx-dark);
+        border:none;
+        color: var(--global-color-neutral-xxxx-light);
+        border-radius: var(--global-borderRadius);
+        border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
+    }
+    .c-input:focus{
+        background-color: var(--global-color-neutral-xxxx-dark);
+        border:none;
+        color: var(--global-color-neutral-xxxx-light);
+        border-radius: var(--global-borderRadius);
+        border: var(--global-borderWidth) solid var(--global-color-alpha-dark);
+    }
+    .c-label{
+        color: var(--global-color-neutral-xx-light);
+    }
+    .c-custom-toggle__fake-input{
+        background-color: var(--global-color-neutral-xxxx-dark);
+        border: 1px solid var(--global-color-neutral-xxxx-dark);
+
+    }
+    .c-custom-toggle__fake-input::after{
+        background-color: var(--global-color-neutral-xxx-light);
+    }
+    .c-card__footer{
+        border-top: 1px solid var(--global-color-neutral-xxxx-dark);
+    }
+    .c-custom-option__fake-input{
+        background-color: var(--global-color-neutral-xxxx-dark);
+        border: 1px solid var(--global-color-neutral-xxxx-dark);
+    }
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -1268,3 +1333,4 @@ No media query since this is the default in mobile first design
         page-break-after: avoid;
     }
 }
+
